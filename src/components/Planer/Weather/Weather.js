@@ -13,7 +13,7 @@ const getHour = (unix) => {
   return date.getHours() + 1;
 };
 const getIcon = (id = "04n") =>
-  ` http://openweathermap.org/img/wn/${id}@2x.png`;
+  ` https://openweathermap.org/img/wn/${id}@2x.png`;
 
 const Weather = (props) => {
   const cityValue = useSelector((state) => state.user.userCity);
