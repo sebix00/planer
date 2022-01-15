@@ -1,0 +1,13 @@
+.container{
+    height: 15rem;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    /* padding:1rem 2rem; */
+    font-family: 'Roboto', sans-serif;
+}
+.date{
+    font-weight: 500;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}

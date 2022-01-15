@@ -1,0 +1,22 @@
+.news{
+    /* border: 1px solid black; */
+    border-radius: 15px;
+    padding:1rem;
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, rgb(52,112,155),rgb(61,128,155));
+  color:#fff;
+}
+.title{
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    text-align: center;
+    letter-spacing: 0.5px;
+
+}
+.content{
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+}

@@ -1,0 +1,14 @@
+.list{
+    height:18rem;
+    overflow:scroll;
+}
+
+input{
+    width: 65%;
+
+}
+@media only screen and (max-width: 1280px) {
+    input {
+      width:40%;
+    }
+  }

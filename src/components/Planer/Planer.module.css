@@ -1,0 +1,40 @@
+.container{
+    background :linear-gradient(to right, rgb(31,42,102), rgb(50,111,136));
+    min-height: 100vh;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3.5rem;
+}
+.planer-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap:1rem;
+    padding: 1rem;
+    /* height: 100vh; */
+}
+.welcome{
+    grid-column: 1/2;
+    grid-row:1/2;
+}
+.news{
+    grid-column: 1/2;
+    /* grid-row:2/3; */
+}
+.test{
+    grid-column: 1/2;
+}
+.weather{
+    grid-column: 2/3;
+    grid-row: 1/span 3;
+}
+@media only screen and (max-width: 1000px) {
+    .planer-container {
+        grid-template-columns:1fr;
+    }
+    .weather{
+        grid-column: 1/2;
+        grid-row:2/3
+    }
+  }

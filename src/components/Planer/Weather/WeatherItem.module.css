@@ -1,0 +1,37 @@
+.weatherItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, rgb(52,112,155),rgb(61,128,155));
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    padding:0.5rem 1rem;
+    color:#fff;
+}
+
+@media only screen and (max-width: 1000px) {
+    .weatherItem{
+        flex-direction: column;
+        margin-right: 3px;
+    }
+   
+  }
+.weatherItem__icon{
+    width:4rem;
+}
+.weatherItem__desc{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+    /* text-align: center; */
+    margin-right:auto;
+}
+.weatherItem__temp{
+    font-size: 1.4rem;
+}
+.weatherItem__hour{
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
