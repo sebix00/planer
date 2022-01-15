@@ -11,12 +11,15 @@ const News = (props) => {
   useEffect(() => {
     const getFact = () => {
       fetch(
-        `https://newsapi.org/v2/top-headlines?country=us&pageSize=10&apiKey=${apiKey}`
+        `https://newsdata.io/api/1/news?page=10&language=en&apikey=pub_3656189d0f2ef3293050bbf3e731cf5f11e1`
       )
         .then((resp) => resp.json())
         .then((data) => {
-          console.log(data.articles);
-          setNews(data.articles);
+          console.log(data.results);
+          const articles = data.results.map((item) => {
+            return { title: item.title, description: item.description };
+          });
+          setNews(articles);
         });
     };
     getFact();
