@@ -7,11 +7,10 @@ import Card from "../../UI/Card";
 const News = (props) => {
   const [news, setNews] = useState([]);
 
-  const apiKey = "12d7363698444c5897410133dd756a32";
   useEffect(() => {
     const getFact = () => {
       fetch(
-        `https://newsdata.io/api/1/news?page=10&language=en&apikey=pub_3656189d0f2ef3293050bbf3e731cf5f11e1`
+        `https://newsdata.io/api/1/news?page=10&language=en&apikey=${process.env.REACT_APP_API_KEY_NEWS}`
       )
         .then((resp) => resp.json())
         .then((data) => {
@@ -26,11 +25,7 @@ const News = (props) => {
   }, []);
 
   let content;
-  // useEffect(() => {
-  //   content = news.map((singleNews) => (
-  //     <SingleNews title={singleNews.title} content={singleNews.description} />
-  //   ));
-  // }, [news]);
+
   if (news.length > 0) {
     content = news.map((singleNews, index) => (
       <SingleNews
@@ -44,10 +39,9 @@ const News = (props) => {
   return (
     <Card className={props.className}>
       <div className={`${classes.container} `}>
+        <p className={classes.title}>Wordl's news</p>
         {content}
-        <Welcome />
       </div>
-      ;
     </Card>
   );
 };

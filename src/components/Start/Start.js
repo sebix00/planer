@@ -14,7 +14,6 @@ const Start = () => {
   const [error, setError] = useState();
   const [isValidForm, setIsValidForm] = useState(false);
 
-  const apiKey="fc798e02d41e7e8e5317e4d924184495";
 
   const dispatch = useDispatch();
   const userNameHandler = (event) => {
@@ -31,7 +30,7 @@ const Start = () => {
       setIsLoading(false);
     } else {
       fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${userCity}&appid=${apiKey}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${userCity}&appid=${process.env.REACT_APP_API_KEY_WEATHER}`
       )
         .then((resp) => resp.json())
         .then((data) => {

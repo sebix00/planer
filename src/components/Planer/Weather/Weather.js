@@ -27,14 +27,12 @@ const Weather = (props) => {
   });
   const [hourWeather, setHourWeather] = useState([]);
 
-  const apiKey="fc798e02d41e7e8e5317e4d924184495";
-
   useEffect(() => {
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
         cityValue +
         "&appid=" +
-        apiKey
+        process.env.REACT_APP_API_KEY_WEATHER
     )
       .then((resp) => resp.json())
       .then((data) => {
@@ -52,7 +50,7 @@ const Weather = (props) => {
         "&lon=" +
         lon +
         "&exclude={daily}&appid=" +
-        apiKey
+        process.env.REACT_APP_API_KEY_WEATHER
     )
       .then((resp) => resp.json())
       .then((data) => {
@@ -60,7 +58,7 @@ const Weather = (props) => {
         setWeatherConditions({
           temp: kelvinToCelcius(data.current.temp),
           desc: data.current.weather[0].description,
-          feels:kelvinToCelcius(data.current.feels_like),
+          feels: kelvinToCelcius(data.current.feels_like),
           pressure: data.current.pressure,
           wind: toKm(data.hourly[0].wind_speed),
           humidity: data.current.humidity,
@@ -75,10 +73,14 @@ const Weather = (props) => {
 
   const currentWeather = (
     <div className={classes.currentWeather}>
-      <img
-        src={getIcon(weatherConditions.icon ? weatherConditions.icon : "02d")}
-        className={classes["currentWeather__icon"]}
-      />
+      <div className={classes["currentWeather__info"]}>
+        <h1>{cityValue}</h1>
+        <img
+          src={getIcon(weatherConditions.icon ? weatherConditions.icon : "02d")}
+          className={classes["currentWeather__icon"]}
+        />
+      </div>
+
       <div className={classes["currentWeather__main"]}>
         <p className={classes["currentWeather__main-temp"]}>
           {weatherConditions.temp} °C
@@ -131,7 +133,7 @@ const Weather = (props) => {
   ));
 
   return (
-    <Card className={`${props.className} ${classes.container}`} >
+    <Card className={`${props.className} ${classes.container}`}>
       <div>{currentWeather}</div>
       {details}
       <div className={classes["hourElement-container"]}>{houerElement}</div>

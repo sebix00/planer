@@ -101,13 +101,14 @@ const ToDoList = (props) => {
   const submitForm = (event) => {
     event.preventDefault();
     addTaskHandler(userInput);
+    setUserInput("");
   };
   const taskElement =
     tasksState.tasks.length > 0
       ? tasksState.tasks.map((task) => (
           <Task task={task.content} onRemove={removeTaskHandler} id={task.id} isCrossed={task.cross} onCross={corssHandler} />
         ))
-      : DUMMY_TASK.map((task) => <Task task={task.task} />);
+      : <h1 className={classes.firstTask}>Please enter your first task</h1>;
 
   return (
     <Card>
@@ -116,6 +117,7 @@ const ToDoList = (props) => {
           <input
             placeholder="Please enter a task"
             onChange={userInputHandler}
+            value={userInput}
           />
           <Button type="onSubmit"> Add task</Button>
           <div>{tasksState.errorMessage}</div>

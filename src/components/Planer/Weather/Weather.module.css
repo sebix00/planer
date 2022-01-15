@@ -1,5 +1,6 @@
 .container{
     flex-direction: column;
+    color: rgb(57, 64, 100);
 }
 .currentWeather{
     display: flex;
@@ -8,6 +9,13 @@
     background-color: rgba(249,250,255);
     
 
+}
+.currentWeather__info{
+    display: flex;
+    align-items: center;
+}
+.currentWeather__info h1{
+    
 }
 .currentWeather__main{
     display: flex;

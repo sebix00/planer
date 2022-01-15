@@ -1,13 +1,23 @@
-.container{
-    height: 15rem;
-    overflow: scroll;
-    display: flex;
-    flex-direction: column;
-    /* padding:1rem 2rem; */
-    font-family: 'Roboto', sans-serif;
+.container {
+  height: 15rem;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  /* padding:1rem 2rem; */
+  font-family: "Roboto", sans-serif;
 }
-.date{
-    font-weight: 500;
-    margin-bottom: 1rem;
-    font-size: 1.6rem;
+.title {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 400;
+  color: rgb(57, 64, 100);
+
+  font-size: 2rem;
+}
+
+.date {
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
 }

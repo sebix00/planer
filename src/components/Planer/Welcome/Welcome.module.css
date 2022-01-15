@@ -5,6 +5,13 @@
   justify-content: space-between;
   align-items: center;
   font-family: 'Roboto', sans-serif;
+  color:rgb(57,64,100);
+}
+.userName{
+  color:rgb(107,214,192);
+}
+.date{
+  color:rgb(120,125,150);
 }
 .time {
   font-size: 1.6rem;

@@ -81,10 +81,12 @@ const Welcome = (props) => {
   return (
     <Card className={props.className}>
       <div className={`${classes["welcome-container"]} `}>
-        <p className={classes.greeting}>{greeting}</p>
+        <p className={classes.greeting}>
+          Good {dayState}, <span className={classes.userName}>{name}</span>
+        </p>
         <div>
           <p className={classes.time}>{time}</p>
-          <p> {dateString}</p>
+          <p className={classes.date}> {dateString}</p>
         </div>
       </div>
     </Card>
