@@ -27,12 +27,14 @@ const Weather = (props) => {
   });
   const [hourWeather, setHourWeather] = useState([]);
 
+  const apiKey="fc798e02d41e7e8e5317e4d924184495";
+
   useEffect(() => {
     fetch(
       "https://api.openweathermap.org/data/2.5/weather?q=" +
         cityValue +
         "&appid=" +
-        process.env.REACT_APP_API_KEY_WEATHER
+        apiKey
     )
       .then((resp) => resp.json())
       .then((data) => {
@@ -50,7 +52,7 @@ const Weather = (props) => {
         "&lon=" +
         lon +
         "&exclude={daily}&appid=" +
-        process.env.REACT_APP_API_KEY_WEATHER
+        apiKey
     )
       .then((resp) => resp.json())
       .then((data) => {
