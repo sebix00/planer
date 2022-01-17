@@ -5,6 +5,8 @@ import classes from "./Weather.module.css";
 import WeatherItem from "./WeatherItem";
 import { WiBarometer, WiHumidity, WiStrongWind } from "react-icons/wi";
 import { HiOutlineUser } from "react-icons/hi";
+import { MdOutlineChangeCircle } from "react-icons/md";
+
 
 const kelvinToCelcius = (value) => Math.round(parseFloat(value) - 273.15);
 const toKm = (value) => value * (3.6).toFixed(2);
@@ -75,10 +77,20 @@ const Weather = (props) => {
     <div className={classes.currentWeather}>
       <div className={classes["currentWeather__info"]}>
         <h1>{cityValue}</h1>
+        <button
+          onClick={() => {
+            localStorage.removeItem("userCity");
+            window.location.reload(true);
+          }}
+          className={classes["btn-change-city"]}
+        >
+          <MdOutlineChangeCircle />
+        </button>
         <img
           src={getIcon(weatherConditions.icon ? weatherConditions.icon : "02d")}
           className={classes["currentWeather__icon"]}
         />
+        
       </div>
 
       <div className={classes["currentWeather__main"]}>

@@ -1,7 +1,7 @@
 .container{
     background :linear-gradient(to right, rgb(31,42,102), rgb(50,111,136));
     min-height: 100vh;
-    width: fit-content;
+    /* width: fit-content; */
     display: flex;
     flex-direction: column;
     justify-content: center;
