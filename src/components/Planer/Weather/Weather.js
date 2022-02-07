@@ -135,12 +135,13 @@ const Weather = (props) => {
       </div>
     </div>
   );
-  const houerElement = hourWeather.map((hour) => (
+  const houerElement = hourWeather.map((hour,i) => (
     <WeatherItem
       icon={getIcon(hour.weather[0].icon)}
       desc={hour.weather[0].description}
       temp={kelvinToCelcius(hour.temp)}
       hour={getHour(hour.dt)}
+      key={i}
     />
   ));
 
