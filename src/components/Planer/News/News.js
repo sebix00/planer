@@ -4,11 +4,6 @@ import classes from "./News.module.css";
 import Welcome from "../Welcome/Welcome";
 import Card from "../../UI/Card";
 
-//niepotrzebny komentarz;
-
-// nie potrzeny
-
-
 const News = (props) => {
   const [news, setNews] = useState([]);
 
