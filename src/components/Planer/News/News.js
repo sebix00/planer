@@ -6,6 +6,8 @@ import Card from "../../UI/Card";
 
 //niepotrzebny komentarz;
 
+// nie potrzeny
+
 
 const News = (props) => {
   const [news, setNews] = useState([]);
