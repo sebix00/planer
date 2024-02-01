@@ -4,6 +4,9 @@ import classes from "./News.module.css";
 import Welcome from "../Welcome/Welcome";
 import Card from "../../UI/Card";
 
+//niepotrzebny komentarz;
+
+
 const News = (props) => {
   const [news, setNews] = useState([]);
 
@@ -26,7 +29,7 @@ const News = (props) => {
 
   let content;
 
-  if (news.length > 0) {
+  if (news && news.length > 0) {
     content = news.map((singleNews, index) => (
       <SingleNews
         title={singleNews.title}
