@@ -26,7 +26,11 @@ const News = (props) => {
 
   let content;
 
-  if (news.length > 0) {
+  //komentarz
+
+  //komentraz 2
+
+  if (news && news.length > 0) {
     content = news.map((singleNews, index) => (
       <SingleNews
         title={singleNews.title}
