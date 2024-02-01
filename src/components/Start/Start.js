@@ -12,6 +12,8 @@ const Start = () => {
   const userCity = useSelector((state) => state.user.userCity);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
+
+
   const [isValidForm, setIsValidForm] = useState(false);
 
 
